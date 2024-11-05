@@ -1,0 +1,73 @@
+<Project Sdk="Godot.NET.Sdk/4.3.0">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MyGameName</RootNamespace>
+    <!-- Required for some nuget packages to work -->
+    <!-- godotengine/godot/issues/42271#issuecomment-751423827 -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <!-- To show generated files -->
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <CompilerGeneratedFilesOutputPath>.generated</CompilerGeneratedFilesOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <Title>MyGameName</Title>
+    <Version>0.1.0</Version>
+    <Description>MyGameName</Description>
+    <Copyright>© 2024 Jason Ziolo</Copyright>
+    <Authors>Jason Ziolo</Authors>
+    <Company>Jason Ziolo</Company>
+    <!-- Don't include unit tests in release builds. -->
+    <DefaultItemExcludes Condition="'$(Configuration)' == 'ExportRelease'">
+      $(DefaultItemExcludes);test/**/*
+    </DefaultItemExcludes>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <!-- Test dependencies go here! -->
+    <!-- Dependencies added here will not be included in release builds. -->
+    <PackageReference Include="Chickensoft.GoDotTest" Version="1.*" />
+    <!-- Used to drive test scenes when testing visual code -->
+    <PackageReference Include="GodotTestDriver" Version="2.*" />
+    <!-- Bring your own assertion library for tests! -->
+    <!-- We're using Shouldly for this example, but you can use anything. -->
+    <PackageReference Include="Shouldly" Version="4.*" />
+    <!-- LightMock is a mocking library that works without reflection. -->
+    <PackageReference Include="LightMock.Generator" Version="1.*" />
+    <!-- LightMoq is a Chickensoft package which makes it more like Moq. -->
+    <PackageReference Include="LightMoq" Version="0.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Production dependencies go here! -->
+    <!-- <PackageReference Include="Chickensoft.Serialization" Version="1.*" /> -->
+    <!-- <PackageReference Include="Chickensoft.Serialization.Godot" Version="0.*" /> -->
+    <PackageReference Include="Arch" Version="1.*" />
+    <PackageReference Include="Arch.AOT.SourceGenerator" Version="1.*" />
+    <PackageReference Include="Arch.EventBus" Version="1.*" />
+    <PackageReference Include="Arch.LowLevel" Version="1.*" />
+    <PackageReference Include="Arch.Persistence" Version="1.*" />
+    <PackageReference Include="Arch.Relationships" Version="1.*" />
+    <PackageReference Include="Arch.System" Version="1.*" />
+    <PackageReference Include="Arch.System.SourceGenerator" Version="1.*" />
+    <PackageReference Include="CLSS.Types.MemoizedFunc" Version="1.2.0" />
+    <PackageReference Include="CLSS.ExtensionMethods.IDictionary.GetOrAdd" Version="1.1.1" />
+    <PackageReference Include="CLSS.ExtensionMethods.IEnumerable.ForEach" Version="1.1.1" />
+    <PackageReference Include="Chickensoft.AutoInject" Version="2.*" PrivateAssets="all" />
+    <PackageReference Include="Chickensoft.GodotNodeInterfaces" Version="2.*" />
+    <PackageReference Include="Chickensoft.Introspection" Version="1.*" />
+    <PackageReference Include="Chickensoft.Introspection.Generator" Version="1.*" PrivateAssets="all" OutputItemType="analyzer" />
+    <PackageReference Include="Chickensoft.LogicBlocks" Version="5.*" />
+    <PackageReference Include="Chickensoft.LogicBlocks.DiagramGenerator" Version="5.*" />
+    <PackageReference Include="CodeProject.ObjectPool" Version="6.5.0" />
+    <PackageReference Include="FastGenericNew.SourceGenerator" Version="3.*" />
+    <PackageReference Include="GTweensGodot" Version="6.*" />
+    <PackageReference Include="Lombok.NET" Version="2.*" />
+    <PackageReference Include="OneOf" Version="3.*" />
+    <PackageReference Include="Scriban" Version="5.*" />
+    <PackageReference Include="Stax.StringSanitizer" Version="1.*" />
+    <PackageReference Include="Supernova.Enum.Generators" Version="1.*" />
+    <PackageReference Include="UnitsNet" Version="5.*" />
+    <PackageReference Include="Vogen" Version="4.*" />
+  </ItemGroup>
+</Project>

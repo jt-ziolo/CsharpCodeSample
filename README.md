@@ -1,0 +1,3 @@
+# CSharp Code Sample
+
+This repo contains a snapshot of source code files from an ongoing personal project. It is intended to serve as a sample and demonstrate my skills in C# programming. The code was written to run on the .NET version of the Godot SDK, version 4.3, which is a free game engine. Many files that would be required to successfully build the Godot project have been purposefully excluded from this sample as they are out of scope.
